@@ -16,11 +16,11 @@ import sys
 random.seed() # Let there be chaos
 
 # Let there be a Dataset `docs`: list[str] of documents (e.g. a list of names)
-if not os.path.exists('input.txt'):
+if not os.path.exists('names.txt'):
     import urllib.request
     names_url = 'https://raw.githubusercontent.com/karpathy/makemore/988aa59/names.txt'
-    urllib.request.urlretrieve(names_url, 'input.txt')
-docs = [line.strip() for line in open('input.txt') if line.strip()]
+    urllib.request.urlretrieve(names_url, 'names.txt')
+docs = [line.strip() for line in open('names.txt') if line.strip()]
 random.shuffle(docs)
 
 # Let there be a Tokenizer to translate strings to sequences of integers ("tokens") and back
